@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"github.com/tajud99n/bookstore_items-api/utils/http_utils"
 	"net/http"
 
 	"github.com/tajud99n/bookstore_items-api/domain/items"
@@ -52,5 +53,13 @@ func (c *itemsController)Create(w http.ResponseWriter, r *http.Request) {
 }
 
 func (c *itemsController)Get(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	itemId := strings.TrimSpace(vars["id"])
 
+	item, err := services.ItemsService.Get(itemId)
+	if err != nil {
+		http_utils.RespondError(w, err)
+		return
+	}
+	http_utils.RespondJSON(w, http.StatusCreated, item)
 }

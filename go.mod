@@ -11,6 +11,6 @@ require (
 	github.com/olivere/elastic v6.2.31+incompatible
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/tajud99n/bookstore_oauth-go v0.0.0-20200516105259-d7d67618dfcf
-	github.com/tajud99n/bookstore_utils-go v0.0.0-20200511175006-d3e22f078454
+	github.com/tajud99n/bookstore_utils-go v0.0.0-20200522123041-9c837465e9e5
 	go.uber.org/zap v1.15.0
 )

@@ -25,6 +25,10 @@ func (s *itemsService) Create(itemRequest items.Item) (*items.Item, errors.RestE
 	return &item, nil
 }
 
-func (s *itemsService) Get(string) (*items.Item, errors.RestErr) {
-	return nil, errors.NewRestError("implement me!", http.StatusNotImplemented, "not_implemented", nil)
+func (s *itemsService) Get(id string) (*items.Item, errors.RestErr) {
+	item := items.Item{Id: id}
+	if err := item.Get(); err != nil {
+		return nil, err
+	}
+	return &item, nil
 }
